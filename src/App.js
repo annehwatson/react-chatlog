@@ -22,10 +22,18 @@ class App extends Component {
 
     let local = participants[0]
     let remote = participants[1]
+    let localRemote = ""
 
     const chats =
     chatMessages.map((chat) => {
+      if (chat.sender === local) {
+        localRemote = "local";
+      } else if (chat.sender === remote) {
+        localRemote = "remote";
+      }
+
       return <Message person={ chat.sender } text={ chat.body } timeStamp={ chat.timeStamp } />
+
     });
 
     return (
@@ -34,7 +42,7 @@ class App extends Component {
           <h1 className="App-title">Chat between { local } and { remote }</h1>
         </header>
         <main className="App-main">
-          <div className="chat-entry local">
+          <div className={"chat-entry " + localRemote}>
             { chats }
           </div>
         </main>
