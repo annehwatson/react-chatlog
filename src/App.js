@@ -18,7 +18,7 @@ class App extends Component {
           <h1 className="App-title">Chat between local and remote</h1>
         </header>
         <main className="App-main">
-          <div className="chat-entry">
+          <div className="chat-entry local">
             { chats }
           </div>
         </main>

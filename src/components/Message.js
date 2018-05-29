@@ -20,7 +20,7 @@ class Message extends React.Component {
           </div>
 
           <div className="entry-time">
-            { timeStamp }
+            <Timestamp time={ timeStamp }></Timestamp>
           </div>
         </div>
       </section>
