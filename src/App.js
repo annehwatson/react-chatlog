@@ -7,6 +7,9 @@ class App extends Component {
   render() {
     console.log(chatMessages);
 
+    let local = "Vladimir"
+    let remote = "Estragon"
+
     const chats =
     chatMessages.map((chat) => {
       return <Message person={ chat.sender } text={ chat.body } timeStamp={ chat.timeStamp } />
@@ -15,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Chat between local and remote</h1>
+          <h1 className="App-title">Chat between { local } and { remote }</h1>
         </header>
         <main className="App-main">
           <div className="chat-entry local">
