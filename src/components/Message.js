@@ -8,6 +8,7 @@ class Message extends React.Component {
     let text = this.props.text
     let timeStamp = this.props.timeStamp
 
+
     return (
       <section>
         <div className="entry-name">

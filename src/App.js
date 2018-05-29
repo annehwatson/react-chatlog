@@ -26,10 +26,12 @@ class App extends Component {
 
     const chats =
     chatMessages.map((chat) => {
-      if (chat.sender === remote) {
-        localRemote = "remote";
-      } else {
+      if (chat.sender === local) {
         localRemote = "local";
+        console.log(localRemote)
+      } else {
+        localRemote = "remote";
+        console.log(localRemote)
       }
 
       return <Message person={ chat.sender } text={ chat.body } timeStamp={ chat.timeStamp } />
