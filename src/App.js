@@ -6,9 +6,22 @@ import Message from './components/Message';
 class App extends Component {
   render() {
     console.log(chatMessages);
+    let lookup = {}
+    let participants = []
 
-    let local = "Vladimir"
-    let remote = "Estragon"
+    //https://stackoverflow.com/questions/17780508/selecting-distinct-values-from-a-json
+    for (let i = 0; i < chatMessages.length; i++) {
+      let sender = chatMessages[i].sender;
+
+      if (!(sender in lookup)) {
+        lookup[sender] = 1;
+        participants.push(sender);
+      }
+    }
+    console.log(participants);
+
+    let local = participants[0]
+    let remote = participants[1]
 
     const chats =
     chatMessages.map((chat) => {
